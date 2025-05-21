@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Despensa-Kiosco</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<button id="floating-add-btn" title="Agregar producto" class="floating-btn">+</button>
+<body>
+  <div class="container">
+    <header>
+      <h1>Despensa–Kiosco</h1>
+      <nav>
+        <input type="text" id="search" placeholder="Buscar producto" />
+        <div class="categories">
+          <button class="category-btn">Bebidas</button>
+          <button class="category-btn">Snacks</button>
+          <button class="category-btn">Limpieza</button>
+          <button class="category-btn">Stock</button>
+        </div>
+        <div class="settings">
+          <button id="menu-toggle">☰</button>
+          <div id="dropdown-menu" class="hidden">
+            <label>
+              <input type="checkbox" id="dark-mode-toggle" /> Modo Oscuro
+            </label>
+            
+            <!-- Controles de vista con íconos SVG -->
+<div class="view-toggle">
+  <button id="vista-lista" title="Vista de lista" aria-label="Vista de lista">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z" />
+    </svg>
+  </button>
+  <button id="vista-cuadricula" title="Vista de cuadrícula" aria-label="Vista de cuadrícula">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+    </svg>
+  </button>
+</div>        
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="product-list" class="view-list">
+        <!-- Vista lista o cuadrícula según modo -->
+        <!-- Aquí se insertarán productos dinámicamente -->
+      </section>
+
+      <aside id="cart">
+        <h2>Carrito</h2>
+        <div id="cart-items">
+          <!-- Items seleccionados -->
+        </div>
+        <div class="cart-total">
+          <p>Total: <span id="total">$0,00</span></p>
+          <button id="clear-cart">Vaciar</button>
+          <button id="save-cart">Guardar</button>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Modal para agregar producto -->
+    <div id="modal-add" class="modal">
+      <div class="modal-content">
+          <button id="close-modal" class="close-btn" title="Cerrar">×</button>
+        <h3>Agregar Producto Nuevo</h3>
+        <form id="add-form">
+          <label>Nombre: <input type="text" name="name" required /></label>
+          <label>Categoría:
+            <select name="category">
+              <option>Bebidas</option>
+              <option>Snacks</option>
+              <option>Limpieza</option>
+            </select>
+          </label>
+          <label>Precio: <input type="number" name="price" required /></label>
+          <label>Stock: <input type="number" name="stock" required /></label>
+          <div class="form-buttons">
+            <button type="button" id="cancel-add">Cancelar</button>
+            <button type="submit">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="ui.js"></script>
+  <script src="productos.js"></script>
+</body>
+</html>
